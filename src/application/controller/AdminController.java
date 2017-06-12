@@ -11,10 +11,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -33,6 +38,17 @@ public class AdminController implements Initializable
     private RationService rationService = new RationServiceImpl();
     private UserService userService = new UserServiceImpl();
 
+
+    private List<String> tables = new ArrayList<String>();
+
+
+
+    private File exportFile;
+    private String table;
+    @FXML
+    ComboBox<String> tableList;
+    @FXML
+    TextArea exportTA;
 
     @FXML
     Label worker_count;
@@ -159,6 +175,14 @@ public class AdminController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        tables.add("worker");
+        tables.add("pet");
+        tables.add("cell");
+        ObservableList observableList = FXCollections.observableArrayList();
+        observableList.addAll(tables);
+        tableList.setItems(observableList);
+
 //Worker
         idC.setCellValueFactory(new PropertyValueFactory<Worker, Integer>("id"));
         firstNameC.setCellValueFactory(new PropertyValueFactory<Worker, String>("first_name"));
@@ -511,6 +535,47 @@ public class AdminController implements Initializable
         {
             cellNumberField.setText(String.valueOf(cell.getCell_number()));
             keeperComboBox.setValue(cell.getWorker());
+        }
+    }
+
+    @FXML
+    private  void chooseFile()
+    {
+        FileChooser fileChooser = new FileChooser();
+
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Excel sheet", "*.cvs");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showSaveDialog(new Stage());
+
+        if(file != null){
+            exportFile= file;
+            exportTA.setText(exportTA.getText()+"Save into "+exportFile.getAbsolutePath()+"\n");
+        }
+    }
+
+    @FXML
+    private void cancelExport()
+    {
+        exportTA.setText("");
+    }
+
+    @FXML
+    private void export()
+    {
+        exportService export = new exportService();
+        export.executeExport(exportFile,table);
+    }
+
+    @FXML
+    private void selectTable()
+    {
+        if(tableList.getSelectionModel().getSelectedItem()!=null)
+        {
+            table = tableList.getSelectionModel().getSelectedItem();
+        exportTA.setText(exportTA.getText()+"Export table "+table+"\n");
         }
     }
 }

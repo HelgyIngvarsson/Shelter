@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.KeeperController">
    <children>
       <TableView fx:id="keeperTable" layoutX="14.0" layoutY="14.0" prefHeight="345.0" prefWidth="416.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
         <columns>
           <TableColumn fx:id="petC" prefWidth="75.0" text="Pet" />
           <TableColumn fx:id="foodTypeC" prefWidth="199.0" text="Food Type" />
-            <TableColumn fx:id="weightC" prefWidth="204.0" text="Weight of portion" />
+            <TableColumn fx:id="weightC" prefWidth="204.0" text="Weight of portion(kg)" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

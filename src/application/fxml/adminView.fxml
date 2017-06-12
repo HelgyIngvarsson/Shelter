@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminController">
    <children>
       <Accordion layoutX="267.0" layoutY="14.0" prefHeight="182.0" prefWidth="319.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -48,7 +44,7 @@
                         <Label layoutX="14.0" layoutY="113.0" text="Worker sheet(choose to redact):" />
                         <Label layoutX="216.0" layoutY="113.0" text="Count:" />
                         <Label fx:id="worker_count" layoutX="249.0" layoutY="113.0" />
-                        <Pane layoutX="472.0" layoutY="53.0" prefHeight="50.0" prefWidth="214.0" style="-fx-background-color: #DCDCDC;" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="45.0">
+                        <Pane layoutX="472.0" layoutY="53.0" prefHeight="50.0" prefWidth="214.0" style="-fx-background-color: #DCDCDC;" AnchorPane.topAnchor="45.0">
                            <children>
                               <Label layoutX="3.0" text="User:" />
                               <TextField fx:id="loginField" layoutX="3.0" layoutY="25.0" prefHeight="22.0" prefWidth="101.0" />
@@ -57,7 +53,10 @@
                               <Label layoutX="132.0" layoutY="7.0" text="Password" />
                            </children>
                         </Pane>
-                     </children></AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect></AnchorPane>
             </content>
                <effect>
                   <DropShadow />
@@ -102,14 +101,17 @@
                         <Label layoutX="9.0" layoutY="113.0" text="Pet sheet(choose to redact):" />
                         <Label layoutX="273.0" layoutY="113.0" text="Count:" />
                         <Label fx:id="pet_count" layoutX="307.0" layoutY="113.0" />
-                     </children></AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow radius="7.8025" width="12.21" />
+                     </effect></AnchorPane>
             </content>
           </TitledPane>
             <TitledPane text="Other">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="cellTable" layoutX="26.8" layoutY="15.8" onMouseClicked="#selectCell" prefHeight="283.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
+                        <TableView fx:id="cellTable" layoutX="26.8" layoutY="15.8" onMouseClicked="#selectCell" prefHeight="283.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="461.20000000000005" AnchorPane.topAnchor="25.0">
                           <columns>
                             <TableColumn fx:id="cellTableColumn" prefWidth="75.0" text="Cell" />
                               <TableColumn fx:id="cellIdTableColumn" prefWidth="75.0" text="Id" visible="false" />
@@ -119,15 +121,33 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <Label layoutX="263.0" layoutY="14.0" text="Cell Number" AnchorPane.topAnchor="14.0" />
-                        <TextField fx:id="cellNumberField" layoutX="263.0" layoutY="28.0" prefHeight="22.0" prefWidth="102.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="28.0" />
-                        <Label layoutX="263.0" layoutY="68.0" text="Keeper" AnchorPane.topAnchor="68.0" />
-                        <ComboBox fx:id="keeperComboBox" layoutX="263.0" layoutY="82.0" prefWidth="150.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="82.0" />
-                        <Button fx:id="cellAdd" layoutX="263.0" layoutY="132.0" mnemonicParsing="false" onAction="#transact" text="Add" AnchorPane.rightAnchor="290.0" AnchorPane.topAnchor="132.0" />
-                        <Button fx:id="cellUpdate" layoutX="306.0" layoutY="132.0" mnemonicParsing="false" onAction="#transact" text="Update" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="132.0" />
-                        <Button fx:id="cellDelete" layoutX="365.0" layoutY="132.0" mnemonicParsing="false" onAction="#transact" text="Delete" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="132.0" />
+                        <Pane layoutX="263.0" layoutY="22.799999237060547" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="22.799999237060547">
+                           <children>
+                              <TextField fx:id="cellNumberField" layoutY="14.200000762939453" prefHeight="22.0" prefWidth="102.0" />
+                              <Label layoutY="54.000003814697266" text="Keeper" AnchorPane.topAnchor="68.0" />
+                              <Button fx:id="cellUpdate" layoutX="44.0" layoutY="113.20000076293945" mnemonicParsing="false" onAction="#transact" text="Update" />
+                              <Button fx:id="cellDelete" layoutX="102.0" layoutY="113.20000076293945" mnemonicParsing="false" onAction="#transact" text="Delete" />
+                              <Button fx:id="cellAdd" layoutY="113.20000076293945" mnemonicParsing="false" onAction="#transact" text="Add" />
+                              <Label text="Cell Number" AnchorPane.topAnchor="14.0" />
+                              <ComboBox fx:id="keeperComboBox" layoutY="68.20000076293945" prefWidth="150.0" />
+                           </children>
+                        </Pane>
                         <Label layoutX="9.0" layoutY="16.0" text="Cell List(choose one to control or register new):" />
+                        <Pane layoutX="464.0" layoutY="23.0" prefHeight="236.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;">
+                           <children>
+                              <Label layoutX="6.0" layoutY="7.0" text="Exports to cvs" />
+                              <ComboBox fx:id="tableList" layoutX="14.0" layoutY="49.0" onAction="#selectTable" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="35.0" text="Table" />
+                              <Button layoutX="137.0" layoutY="200.0" mnemonicParsing="false" onAction="#export" text="Export" />
+                              <Button layoutX="48.0" layoutY="79.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="22.0" prefWidth="82.0" text="Choose file" />
+                              <TextArea fx:id="exportTA" layoutX="14.0" layoutY="107.0" prefHeight="69.0" prefWidth="150.0" />
+                              <Button layoutX="82.0" layoutY="200.0" mnemonicParsing="false" onAction="#cancelExport" text="Cancel" />
+                           </children>
+                        </Pane>
                      </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </AnchorPane>
               </content>
             </TitledPane>
@@ -137,4 +157,7 @@
          </effect>
       </Accordion>
    </children>
+   <effect>
+      <DropShadow />
+   </effect>
 </AnchorPane>

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminController">
    <children>
+      <Label alignment="CENTER" text="Admin Panel" textFill="#00000080" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="69.0" />
+         </font>
+      </Label>
       <Accordion layoutX="267.0" layoutY="14.0" prefHeight="182.0" prefWidth="319.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <panes>
           <TitledPane text="Workers">
@@ -133,7 +141,7 @@
                            </children>
                         </Pane>
                         <Label layoutX="9.0" layoutY="16.0" text="Cell List(choose one to control or register new):" />
-                        <Pane layoutX="464.0" layoutY="23.0" prefHeight="236.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;">
+                        <Pane layoutX="464.0" layoutY="23.0" prefHeight="236.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="23.0">
                            <children>
                               <Label layoutX="6.0" layoutY="7.0" text="Exports to cvs" />
                               <ComboBox fx:id="tableList" layoutX="14.0" layoutY="49.0" onAction="#selectTable" prefWidth="150.0" />

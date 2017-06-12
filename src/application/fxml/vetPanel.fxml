@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.*?>
+
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.VetController">
    <children>
       <ListView fx:id="petList" layoutX="14.0" layoutY="52.0" onMouseClicked="#selectPet" prefHeight="333.0" prefWidth="145.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="52.0" />
@@ -17,7 +20,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Pane layoutX="477.0" layoutY="7.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="7.0">
+      <Pane layoutX="477.0" layoutY="7.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="7.0">
          <children>
             <Label fx:id="dateLabel" layoutY="11.0" />
             <Label layoutX="3.0" layoutY="75.0" text="Your conclusion:" />

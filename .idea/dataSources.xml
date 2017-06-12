@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Shelter@localhost" uuid="340f76de-3e9c-4479-943e-13c13d3372e1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Shelter</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="8338119f-a50d-4dea-a5d0-3d2be13c76c2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/src/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Shelter</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Database Driver - jdbc:firebirdsql://localhost:3050/D:\Учеба\SHELTERDB.FDB?encoding=NONE&amp;charSet=UTF-8" uuid="6caf9363-a52b-40f2-89db-a1e5a8e84e31">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.firebirdsql.jdbc.FBDriver</jdbc-driver>
+      <jdbc-url>jdbc:firebirdsql://localhost:3050/D:\Учеба\SHELTERDB.FDB?encoding=NONE&amp;charSet=UTF-8</jdbc-url>
+    </data-source>
+  </component>
+</project>

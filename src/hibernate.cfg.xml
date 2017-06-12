@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/Shelter</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">masterkey</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <mapping class="application.model.User"/>
+        <mapping class="application.model.Cell"/>
+        <mapping class="application.model.FoodType"/>
+        <mapping class="application.model.MedObserv"/>
+        <mapping class="application.model.Order"/>
+        <mapping class="application.model.Pet"/>
+        <mapping class="application.model.PetSpec"/>
+        <mapping class="application.model.PetType"/>
+        <mapping class="application.model.Post"/>
+        <mapping class="application.model.Ration"/>
+        <mapping class="application.model.TypeSpec"/>
+        <mapping class="application.model.Worker"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
